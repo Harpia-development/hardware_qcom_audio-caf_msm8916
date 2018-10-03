@@ -214,6 +214,8 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_DEV_ARBI)),true)
     LOCAL_SRC_FILES += audio_extn/dev_arbi.c
 endif
 
+LOCAL_HEADER_LIBRARIES += generated_kernel_headers
+
 ifeq ($(strip $(AUDIO_FEATURE_ENABLED_RECORD_PLAY_CONCURRENCY)),true)
     LOCAL_CFLAGS += -DRECORD_PLAY_CONCURRENCY
 endif
