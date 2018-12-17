@@ -2132,6 +2132,22 @@ error:
     return ret;
 }
 
+static int in_set_microphone_direction(const struct audio_stream_in *stream,
+                                           audio_microphone_direction_t dir) {
+    (void)stream;
+    (void)dir;
+    ALOGVV("%s", __func__);
+    return -ENOSYS;
+}
+
+static int in_set_microphone_field_dimension(const struct audio_stream_in *stream, float zoom) {
+    (void)stream;
+    (void)zoom;
+    ALOGVV("%s", __func__);
+    return -ENOSYS;
+}
+
+
 static char* out_get_parameters(const struct audio_stream *stream, const char *keys)
 {
     struct stream_out *out = (struct stream_out *)stream;
@@ -3753,6 +3769,8 @@ static int adev_open_input_stream(struct audio_hw_device *dev,
     in->stream.set_gain = in_set_gain;
     in->stream.read = in_read;
     in->stream.get_input_frames_lost = in_get_input_frames_lost;
+    in->stream.set_microphone_direction = in_set_microphone_direction;
+    in->stream.set_microphone_field_dimension = in_set_microphone_field_dimension;
 
     in->device = devices;
     in->source = source;
