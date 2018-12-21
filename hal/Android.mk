@@ -243,6 +243,7 @@ endif
 
 LOCAL_SHARED_LIBRARIES := \
         liblog \
+	libprocessgroup \
         libcutils \
         libhardware \
         libtinyalsa \
