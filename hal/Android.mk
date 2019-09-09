@@ -245,7 +245,6 @@ LOCAL_SHARED_LIBRARIES := \
         liblog \
         libcutils \
         libprocessgroup \
-        libhardware \
         libtinyalsa \
         libtinycompress \
         libaudioroute \
@@ -257,7 +256,6 @@ LOCAL_C_INCLUDES += \
         external/tinyalsa/include \
         external/tinycompress/include \
         external/expat/lib \
-        hardware/libhardware/include \
         system/media/audio_utils/include \
         $(call include-path-for, audio-route) \
         $(call include-path-for, audio-effects) \
@@ -293,11 +291,6 @@ ifeq ($(strip $(AUDIO_FEATURE_ENABLED_PM_SUPPORT)),true)
     LOCAL_SRC_FILES += audio_extn/pm.c
     LOCAL_C_INCLUDES += $(TARGET_OUT_HEADERS)/libperipheralclient/inc
     LOCAL_SHARED_LIBRARIES += libperipheral_client
-endif
-
-ifneq ($(strip $(AUDIO_FEATURE_ENABLED_EXT_AMPLIFIER)),false)
-    LOCAL_CFLAGS += -DEXT_AMPLIFIER_ENABLED
-    LOCAL_SRC_FILES += audio_extn/audio_amplifier.c
 endif
 
 LOCAL_CFLAGS += -Werror
