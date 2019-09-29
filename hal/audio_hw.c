@@ -58,6 +58,7 @@
 #include <cutils/str_parms.h>
 #include <cutils/properties.h>
 #include <cutils/atomic.h>
+#include <processgroup/sched_policy.h>
 
 #include <hardware/audio_effect.h>
 #include <hardware/audio_alsaops.h>
